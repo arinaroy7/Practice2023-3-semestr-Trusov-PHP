@@ -7,7 +7,6 @@
 </html>
 <body>
     <?php
-
     function calculateTriangleInfo($point1, $point2, $point3) {
 
         $a = sqrt(($point2['x'] - $point3['x']) ** 2 + ($point2['y'] - $point3['y']) ** 2);
@@ -51,10 +50,6 @@
     $point3 = ['x' => 0, 'y' => 3];
 
     $angles = calculateTriangleInfo($point1, $point2, $point3); //функция вычисляет углы треуголь, образованного точками выше и возвр результат
-        
-    foreach ($angles as $angle) {
-        echo $angle . "<br>"; // получаем результат в виде массива углов ; тег "<br>" - перенос строки 
-    }
 
     function calculateTriangleArea($a, $b, $c) {
         // Вычисляем площадь треугольника по формуле Герона
@@ -68,16 +63,17 @@
 
     $info = calculateTriangleInfo($point1, $point2, $point3);
 
-    echo "Длины сторон треугольника:";
-    echo "a: " . $info['a'] . "<br>";
+    echo "Длины сторон треугольника:<br> ";
+    echo "a: " . $info['a'] . "<br>"; //вычисляется, как расстояние между точкой 2 и 3
     echo "b: " . $info['b'] . "<br>";
     echo "c: " . $info['c'] . "<br>";
 
-    echo "Углы треугольника (в градусах):";
+    echo "Углы треугольника: <br> ";
     echo "A: " . $info['angles']['A'] . "<br>";
     echo "B: " . $info['angles']['B'] . "<br>";
     echo "C: " . $info['angles']['C'] . "<br>";
 
     echo "Площадь треугольника: " . $info['area'] . "<br>";
+    
     ?>
 </body>
